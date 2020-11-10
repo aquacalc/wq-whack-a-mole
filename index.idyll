@@ -1,0 +1,483 @@
+[meta title:"WQ ToolBox - pH Part 1" description:"" /]
+
+// [IdyllLogo /]
+
+[Header
+  fullWidth:true
+  title:"WQ ToolBox Manual"
+  subtitle:"pH I: The Basics"
+  authorLink:"aquacalc@gmail.com"
+  date:`(new Date()).toDateString()`
+  background:"url('static/images/Buza-2.png')"
+  color:"white"
+   /]
+
+// ***********************************
+
+// Temperature and salinity variables & calculations
+[var name: 'tempInC' value: 25 /]
+[derived name: temp value: `273.15 + tempInC` /]
+
+[var name: 'sal' value: 34.5 /]
+
+// calcKwMehrbach(temp, sal)
+[derived name: expSum value: `(148.9652 - 13847.26 / temp) - 23.6521 * Math.log(temp) +
+    (-5.977 + 118.67 / temp + 1.0495 * Math.log(temp)) * Math.sqrt(sal) - 0.01615 * sal`/]
+// expSum = [Display value: expSum/]
+[derived name: kw value: `Math.exp(expSum)` /]
+[derived name: lnkw value: `Math.log(Math.exp(expSum))` /]
+[derived name: neglog10kw value: `-Math.log10(Math.exp(expSum))` /]
+[derived name: phNeutral value: `-0.5 * Math.log10(kw)` /]
+
+// ***********************************
+// ***********************************
+
+## Intro
+
+[aside]
+[Inline]
+// Whether working with aquatic production (aquaculture, aquaponics, hydroponics) or recreational (pool, spa, home aquarium) systems, 
+The **WQ ToolBox** software can be used without this manual to manage aquatic production (aquaculture, aquaponics, hydroponics) and 
+recreational (pool, spa, home aquarium) systems.
+[/Inline]
+[/aside]
+
+[p]
+This three-part interactive intro to pH is a chapter in the **WQ ToolBox** manual.
+[/p]
+
+[p]
+The intent is to strengthen understanding of basic water quality concepts and vocabulary to bridge the gap between simple 
+explanations and the tech literature. This will equip users to become more effective and confident WQ managers.
+[/p]
+
+[p style: `{fontSize: '0.90rem'}` ]
+ *This document was developed with* [a href:"https://idyll-lang.org/"]Idyll[/a], *a "toolkit for creating data-driven stories 
+ and explorable explanations". Custom components were built with* [a href:"https://reactjs.org/"]React[/a] *and*  [a href:"https://d3js.org/"]D3[/a].
+[/p]
+
+[p style:`{textAlign:'right'}`]
+  contact [a href:'mailto: aquacalc@gmail.com']aquacalc@gmail.com[/a]
+[/p]
+
+[div style:`{background: '#F5F5DC', borderRadius: '15px', padding: '15px', textAlign:'center', marginTop:'0px', paddingTop:'2px'}`]
+[h3 id:"top"]Table of Contents[/h3]
+[ul style:`{listStyleType:'none', marginTop:'0px'}`]
+
+// [var name:"showContent_toc_1" value:true /]
+[div]
+// [Button className: 'showToc' onClick:`showContent_toc_1 = !showContent_toc_1` ]
+//   [Display value:`showContent_toc_1 ? 'Close Just the Basics' : 'Just the Basics' ` /]
+// [/Button]
+// [Conditional if:`showContent_toc_1`]
+  [li][/li]
+  [ul className: 'ulToc']
+    [li] [a href:"#what-is-ph"]What is pH?[/a] [/li]
+    [li] [a href:"#why-ph-important"]Why is pH important?[/a] [/li]
+    [li] [a href:"#one-size"]One size doesn't always fit all[/a] [/li]
+    [li] [a href:"#whack-a-mole"]Water Quality Whack-a-Mole[/a] [/li]
+    [li] [a href:"#summary-toc-1"]Summary[/a] [/li]
+    [li] [a href:"#diving-deeper"]Diving Deeper?[/a] [/li]
+    [li] [a href:"#refs"]Refs[/a] [/li]
+  [/ul]
+  // [/Conditional]
+[/div]
+
+[/ul]
+[/div]
+
+## Just the Basics
+
+// ((((((((( WHAT IS PH )))))))))
+[div]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"what-is-ph"]*What is pH?*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+[/div]
+
+[p]
+pH is a measure of a solution's acidity.
+[/p]
+
+[p]
+The pH scale has no fixed limits: it runs from negative numbers [Cite 
+  authors:"Lim, K.F."
+  title:"Negative pH Does Exist"
+  id:"ph-negative"
+  url:"https://pubs.acs.org/doi/pdf/10.1021/ed083p1465"
+  venue: "J. Chem. Educ. 2006, 83, 10, 1465"
+  date:"2006"
+/] to more than 14. The lower the pH, the higher the acidity.
+[/p]
+
+[p style:`{marginBottom: '3px'}`]Some examples...[/p]
+
+[aside className:"title"]
+[Inline]Solutions with high pH are "basic" or "alkaline". 
+This use of "alkaline" has nothing to do with the concept of alkalinity (explained in that section) or with [a href:"https://en.wikipedia.org/wiki/Al_Kaline" ]Al Kaline[/a].[/Inline]
+// This use of "alkaline" has nothing to do with the concept of alkalinity (explained in that [a href:"https://en.wikipedia.org/wiki/Al_Kaline" ]section[/a]) or with [a href:"https://en.wikipedia.org/wiki/Al_Kaline" ]Al Kaline[/a].[/Inline]
+[/aside]
+
+// [a href:"http://localhost:3001/#top" ]pH Section II[/a]
+
+[ul style:`{marginTop:"8px"}`]
+[li]acid mine water from Iron Mountain (CA) has a pH of -3.6 [Cite 
+  authors:"Nordstrom, D. K., C. N. Alpers, C. J. Ptacek, and D. W. Blowes"
+  title:"Negative pH and Extremely Acidic Mine Waters from Iron Mountain, California"
+  id:"ph-negative-mine"
+  url:"https://pubs.acs.org/doi/10.1021/es990646v"
+  venue: "Environ. Sci. Technol. 2000, 34, 2, 254–258"
+  date:"2000"
+/][/li]
+[li]concentrated hydrochloric acid (HCl) has a pH of about -1[/li]
+[li]sulfuric acid (H[sub]2[/sub]SO[sub]4[/sub]) in a car battery has a pH of about 0.8[/li]
+[li]the pH of healthy human blood is between 7.35 and 7.45[/li]
+[li]typical hand soap has a pH of about 10 (some have additives to lower pH)[/li]
+[li]saturated sodium hydroxide (NaOH) has a pH of 15[/li]
+[/ul]
+
+[br/]
+
+[PhZeroFourteen className:"d3-component" /]
+
+[p]
+In aquatic production systems (aquaculture, aquaponics, hydroponics) and aquatic recreational systems (swimming pools, spas, home aquaria) 
+pH generally falls within the range of roughly 6.5 to 8.5.
+[/p]
+
+[p]
+There are exceptions. Some essential minerals (*e.g.*, Iron, Manganese, Zinc) are only available to hydroponic plants at a pH of about 5.3 
+to 6.3. On the other end, pH above 9 is not uncommon in mature high-density cultures of microalgae raised as aquaculture larval feed.
+[/p]
+
+
+// ((((((((( WHY PH IMPORTANT )))))))))
+[div style:`{marginTop: '35px'}`]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"why-ph-important"]*Why is pH important?*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+[/div]
+
+[aside][Inline]pH is so important that it was crowned a "**master variable**" in one of the more authoritative texts on aquatic chemistry [Cite 
+  authors:"Stumm, W. and J.J. Morgan"
+  title:"Aquatic Chemistry: Chemical Equilibria and Rates in Natural Waters"
+  id:"stumm-morgan"
+  venue: "JISBN 978-0-471-51185-4 October 1995 1040 Pages"
+  date:"1995"
+/].[/Inline][/aside]
+
+[p]
+In its role as water quality's "master variable", pH controls the rate and direction of important processes that determine the health of aquatic systems.
+[/p]
+
+[p style:`{marginBottom:'3px'}`]Among others, pH plays a critical role in determining...[/p]
+
+[ul style:`{marginTop:"8px"}`]
+[li]the concentration of toxic un-ionized ammonia (UIA)[/li]
+[li]the efficiency of nitrifying bacteria in removing ammonia[/li]
+[li]the amount of toxic dissolved carbon dioxide (CO[sub]2[/sub])[/li]
+[li]the calcite saturation state Ω (omega), important in skeletal formation[/li]
+[li]the effectiveness of chlorine in killing pathogens in pools & spas[/li]
+[li]the availability of minerals for good growth of hydroponic plants[/li]
+[/u]
+
+
+// *^^^^^^^^^^^^^^^^^^^^^* //
+// *^^^^^^ Ps & Qs ^^^^^^* //
+// *^^^^^^^^^^^^^^^^^^^^^* //
+
+[var name:"showContent_sorensen" value:false /]
+
+// Empty [p] to catch internal link from 'Close' btn?
+[p id:"close-sorensen" /]
+
+[Button className:"showHideBtn" onClick:`showContent_sorensen = !showContent_sorensen` ]
+  [Display value:`showContent_sorensen ? 'Hide Content' : 'The p\'s & q\'s of pH' ` /]
+[/Button]
+
+[Conditional if:`showContent_sorensen`]
+
+[div className:"dynamic-module" ]
+
+[p]
+The *pH* symbol was introduced in 1909 by the Danish chemist Søren Peder Lauritz Sørensen as part of his research on beer at the Carlsberg brewery in 
+Copenhagen [Cite 
+  authors:"Sörensen, S.P.L."
+  title:"Enzymstudien. II. Mitteilung. Über die Messung und die Bedeutung der Wasserstoffionenkoncentration bei enzymatischen Prozessen"
+  url:"https://babel.hathitrust.org/cgi/pt?id=inu.30000091476832&view=1up&seq=141"
+  id:"sorensen"
+  venue: "Biochemische Zeitschrift (in German). 21: 131–304."
+  date:"1909"
+/].
+[/p]
+
+[div style:`{marginLeft: '80px', marginBottom: '25px', width: '80%'}` ]
+![Sorensen](static/images/Soren_Sorensen.jpg)
+[/div]
+
+[p style:`{marginLeft: '140px'}` ]
+Søren Sørensen & his crew at the Carlsberg lab
+[/p]
+
+#### File under: Interesting factoid
+
+[p]
+If you've read other explanations of pH, you might have come across the statement that "p" stands for *pondus* or *potens*, Latin words which may be 
+translated as "power", thus making pH "the power of hydrogen". This interpretation is widely repeated.
+[/p]
+
+[p]Myers [Cite 
+  authors:"Myers, R.J."
+  title:"One-hundred Years of pH"
+  url:"https://doi.org/10.1021/ed800002c"
+  id:"ph-history"
+  venue: "J. Chem. Educ. 2010, 87, 1, 30–32"
+  date:"2010"
+/] looked into it and concluded that there is no evidence to suggest that Sørensen intended it to mean anything other than the letter "p", perhaps 
+simply to distinguish one sample from another labeled "q".
+[/p]
+
+[p]
+A few others (*e.g.*, [a href:"https://derangedphysiology.com/main/cicm-primary-exam/required-reading/acid-base-physiology/Chapter%20106/sorensen-definition-ph-hydrogen-ion-concentration"]here[/a]) 
+have gone back to the source and point out the "money" sentence on p. 134 of Sørensen's original paper [Cite id:"sorensen" /] where he first introduces the term.
+[/p]
+
+[div style:`{marginLeft: '80px', marginBottom: '25px', width: '80%'}` ]
+![Sorensen1](static/images/sorensen_134.png)
+[/div]
+
+[p]
+Starting with "*...und dieser Faktor....*" ([span style:`{fontSize:'0.85rem'}`]end of line 3[/span]), a fair English translation is:
+[/p]
+
+[p]
+*...and this factor will be written in the form of a negative power* \[Potenz, in German\]  *of 10. By the way, I refer to this in a following section (see p. 159),* 
+\[and\] *here will I only mention that I use the name "hydrogen ion exponent" and the symbol p[sub]H[/sub] for the numerical value of the exponent of this power* 
+\[again, Potenz\].
+[/p]
+
+[p]
+Sørensen makes no reference to any separate meaning of "p"; but he clearly defines pH -- which he wrote as p[sub]H[/sub] -- as a *mathematical 
+power* (*i.e.*, an exponent).
+[/p]
+
+[p]
+The word *die Potenz* is used in German mathematics just like it is in English: *i.e.*, raising a number to a power. So perhaps someone inferred that "p" stands for 
+*power* and added a Latin flourish. 
+[/p]
+
+[p]
+But that doesn't appear to have been Sørensen's intent in the passage above: He explicitly used the term *Wasserstoffionen[span style:`{fontWeight:'700'}`]exponent[/span]*, not *Wasserstoffionen[span style:`{fontWeight:'700'}`]potenz[/span]*.)
+[/p]
+
+[p]
+*Historically interesting?* I think so. *Any bearing at all on our water-quality work?* Nope.
+[/p]
+
+
+#### The life of "p"
+[p]
+Whatever it means -- if anything -- "p" has taken on a separate life of its own in chemical notation: it has been adopted as shorthand for the negative base-10 logarithm, 
+symbolized as "-log[sub]10[/sub]".
+[/p]
+
+[p]
+As you'll see a bit further along in this section of the WQ Map online manual, logarithms are a convenient way of transforming very small quantities into a more 
+human-friendly form. If you dip into the water-quality tech literature, you're sure to come across not only pH, but also pOH, pK[sub]w[/sub], pK[sub]a[/sub], 
+and so forth.
+[/p]
+
+[div style: `{textAlign: 'center'}` ]
+[a className:"closePanelBtn" href:"#close-sorensen" onClick:`showContent_sorensen = false` ]Close Content[/a]
+[/div]
+
+[/div]
+
+[/Conditional]
+
+
+// ((((((((( ONE SIZE FIT ALL )))))))))
+[div style:`{marginTop: '35px'}`]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"one-size"]*One size doesn't always fit all*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+[/div]
+
+[p]
+Only very rarely will a single pH value satisfy the criteria of all important water quality properties. For example...
+[/p]
+
+[ul]
+[li]
+When pH is high, CO[sub]2[/sub] and Ω levels may be safe, but UIA may be a problem and hydroponic plants may be unable to absorb essential minerals.
+[/li]
+
+[li]
+But when pH is low enough for safe UIA, then CO[sub]2[/sub] may be dangerously high, Ω too low to form strong shells, and nitrifying bacteria may not have sufficient
+bicarbonate (HCO[sub]3[/sub][sup]-[/sub]) to function efficiently.
+[/li]
+[/ul]
+
+[p]
+The following panel illustrates this aspect of pH management.
+[/p]
+
+
+// ******************** //
+// ** TRAFFIC LIGHTS ** //
+// ******************** //
+
+[div className:"dynamic-module" ]
+
+[var name: 'tempInC_traffic' value: 25 /]
+[derived name: temp_traffic  value: `273.15 + tempInC_traffic` /]
+
+// ((((((((( WHACK-A-MOLE )))))))))
+[div style:`{marginTop: '0px'}`]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"whack-a-mole"]*Water Quality Whack-a-Mole*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+[/div]
+
+[p]
+The game: adjust pH so that all water-quality properties fall within their safe range (*i.e.*, each light is either green or yellow). Your targets:
+[/p]
+
+[ul style:`{marginLeft:'40px'}` ]
+[li]Carbon dioxide (**CO[sub]2[/sub]**) should be ***less than*** **10 mg/L**[/li]
+[li]Un-Ionized Ammonia-Nitrogen (**UIA-N**) should be ***less than*** **12.5 μg/L**[/li]
+[li]Aragonite saturation (**Ω[sub]ar[/sub]**) should be **1.0** ***or higher*** [/li]
+[/ul]
+
+[p]
+Start with a low pH, observe the effects, and then set a high pH to see the change.
+[/p]
+
+[p]
+Play with pH to find an optimum. How wide (or narrow) is that optimal pH range?
+[/p]
+
+[p]
+After you've found an optimum pH, change Total Ammonia-Nitrogen (**TA-N**) to see how that upsets the balance (it increases UIA-N); then search for a new optimum pH.
+[/p]
+
+[p style:`{fontSize: "0.78rem"}`]
+\[Simplifications: temperature (25° C or 77° F), salinity (30‰), alkalinity (2.5 meq/kg or ~125 ppm), & 
+calcium (412 ppm) all are constant. No biogeochem processes are acting to throw you a curveball.\]
+[/p]
+
+
+[div]
+[Inline]
+[var name: 'ph_traffic' value: 7.1 /]
+pH [Range value: ph_traffic min: 6.5 max: 8.5 step: 0.01 /]
+[Display value: ph_traffic format:".2f" /] (NBS Scale)
+[/Inline]
+
+[Inline]
+[span style:`{marginRight: "60px"}`][/span]
+[/Inline]
+
+[Inline]
+[var name: 'tan_traffic' value: 0.5 /]
+TA-N [Range value: tan_traffic min: 0.05 max: 2.5 step: 0.01 /]
+[Display value: tan_traffic format:".2f" /] (mg/L)
+[/Inline]
+[/div]
+
+[TrafficLights className:"d3-component" system: 'Biofloc' temp: 25 tempUnits: "° C" sal: 30 ph: ph_traffic tan: tan_traffic /]
+
+[hr/]
+
+[p]
+**The Take-away**: If there *is* a pH optimum -- under some conditions, there isn't -- it's not always easy to find *and maintain* in a real-world setting. 
+(And the optimal range may be very narrow, spanning only a few tenths of a pH unit.)
+[/p]
+
+[p]
+Trial-and-error, as in this demo, is an inefficient management approach: you smack down one problem...and another problem pops up somewhere else -- kind of like 
+playing "Water Quality Whack-a-Mole".
+[/p]
+
+[div style:`{textAlign: 'center', marginTop: '20px'}`]
+[Youtube
+  id:"VoP1E9J4jpg"
+  play:false
+  audio:true
+  width:500
+  height:300
+  loop:1
+  options:`{ controls: 1 }`
+  /]
+  [/div]
+
+[/div]
+
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ //
+
+[div className: 'section-summary']
+
+// ((((((((( SUMMARY: JUST THE BASICS )))))))))
+[div]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"summary-toc-1"]Summary: Just the Basics[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+[/div]
+
+  [ul]
+    [li] *from this section* [/li]
+      [ul style:`{marginBottom:'20px'}`]
+        [li] pH measures a **solution's acidity** [/li]
+        [li] pH is a **master variable** that determines critical WQ properties [/li]
+        [li] (there's no evidence that "p" in pH stands for anything) [/li]
+        [li] the pH scale runs from **negative numbers to more than 14** [/li]
+        [li] most practical values range from **pH 6.5 - pH 8.5** [/li]
+        [li] WQ properties have **different pH optima**: some low, some high [/li]
+        [li] the overall **optimum is difficult to find** by trial-and-error [/li]
+        [li] the **WQ ToolBox** software finds pH optima automatically [/li]
+      [/ul]
+
+    [li] *if you don't go deeper, some highlights from the next sections* [/li]
+      [ul]
+        [li] pH is defined on the **-log[sub]10[/sub] scale** [/li]
+        [li] strictly, pH is defined as **activity**, not **concentration** [/li]
+        [li] **small pH changes** mean much larger acidity changes [/li]
+        [li] a one-unit pH change means a **ten-fold change** in acidity [/li]
+        [li] **each 0.30 pH** ***drop*** **roughly doubles** acid concentration [/li]
+        [li] **each 0.30 pH** ***rise*** **roughly halves** acid concentration [/li]
+        [li] **neutral pH is not always 7**; it varies with temperature & salinity [/li]
+        [li] the **NBS scale** is for freshwater and is inaccurate in seawater [/li]
+        [li] **three pH scales** are used for seawater calculations [/li]
+        [li] the **WQ ToolBox** software performs all needed pH gymnastics [/li]
+      [/ul]
+  [/ul]
+
+[/div]
+
+[hr className:'section-hr'/]
+
+// ((((((((( DIVE DEEPER? )))))))))
+[div style:`{marginTop: '35px'}`]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"diving-deeper"]*Diving deeper?*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+[/div]
+
+[p]
+You don't have to dive deeper into the details of pH presented below to manage your aquatic system: You can use the **WQ Map** -- included in the 
+**WQ ToolBox** software -- to guide you to the Green Zone, the region where critical water-quality parameters are safely balanced.
+[/p]
+
+[p]But developing a deeper understanding of pH and other water-quality properties has advantages: It lays a foundation that will help you...
+[/p]
+
+[ul style:`{marginLeft:'30px'}` ]
+[li]...better grasp the software results[/li]
+[li]...scrape more information & insight from the technical literature[/li]
+[li]...communicate more effectively with colleagues[/li]
+[li]...ask better questions of tech specialists (and understand the answers!) [/li]
+[li]...and enhance your sense of professional confidence[/li]
+[/ul]
+
+[p]
+In short, it's part of becoming a more complete WQ manager.
+[/p]
+
+[p]
+But if the material in the next section is more detailed than you want, or if you glaze over at the sight of equations, you can blow it off and 
+move on to one of the other topics. And if you get the urge later, you always can return and take it in a bit at a time.
+[/p]
+
+[hr className:'section-hr' id:'ph-and-beyond' /]
+
+[Inline] [h4 style:`{display: 'inline', marginRight: '30px', marginBottom: '0px', paddingBottom:'0px'}` id:"refs"] [/h4] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+
+[Cite.References/]

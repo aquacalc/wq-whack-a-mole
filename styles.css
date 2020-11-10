@@ -1,0 +1,241 @@
+/* This modified slightly from Idyll */
+.d3-component svg {
+  background: #f5f5dc;
+  border-radius: 30px;
+  /* background: rgb(190, 197, 219); */
+  max-height: 300px;
+}
+
+/* A few added from Idyll's git */
+p {
+  margin-top: 8px;
+}
+
+small {
+  background: rgb(151, 214, 231);
+  font-size: small;
+  font-style: italic;
+  /*font-weight: bold;*/
+}
+small p {
+  font-size: small;
+  font-style: italic;
+  /*font-weight: bold;*/
+}
+
+small span {
+  font-size: small;
+  font-style: italic;
+  /*font-weight: bold;*/
+}
+
+.dynamic-module {
+  background: #efefef;
+  margin: 2em -2em;
+  padding: 1em;
+  border-radius: 10px;
+}
+
+.contrast {
+  background-color: rgb(211, 235, 211);
+  color: rgb(5, 114, 16);
+  margin: 20px;
+  padding: 20px;
+}
+
+/* Changes to Idyll's default .aside */
+.aside {
+  background-color: rgba(211, 235, 211, 0.8);
+  color: rgb(5, 114, 16);
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  margin: 0 2px;
+  font-size: 0.95rem;
+  border-radius: 15px;
+  /* top: -15px; */
+}
+.aside.title {
+  top: -200px;
+}
+/* .my-aside-bkg span.aside {
+  background-color: inherit;
+} */
+
+/* .my-aside-container {
+  position: relative;
+  display: block;
+}
+
+.my-aside {
+  background-color: rgb(235, 14, 14);
+  display: block;
+  position: absolute;
+  width: 300px;
+  right: calc((10vw + 350px + 150px) / -2);
+} */
+
+@media all and (max-width: 1000px) {
+  .d3-component svg {
+    max-height: 200px;
+  }
+  /* .aside {
+    width: 100%;
+  } */
+}
+
+/* Added with development of the PH doc */
+.mySubHeading {
+  font-size: 1rem;
+  font-weight: 600;
+  font-style: italic;
+  margin-top: 25px;
+  line-height: 1.25;
+}
+
+/* Accordion content */
+.showHideBtn {
+  display: block;
+  width: 100%;
+  height: 50px;
+  outline: none;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-size: 1.5rem;
+  border-radius: 30px;
+  color: #5971ad;
+  background: white;
+  /* background: #5971ad;
+  color: white; */
+}
+.showHideBtn:hover {
+  background: #5971ad;
+  color: white;
+  cursor: pointer;
+}
+
+/* Accordion ToC content */
+.showToc {
+  display: block;
+  width: 100%;
+  height: 30px;
+  outline: none;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-size: 1.1rem;
+  border-radius: 10px;
+  color: #5971ad;
+  background: white;
+  margin-bottom: 0px;
+}
+.showToc:hover {
+  background: #5971ad;
+  color: white;
+  cursor: pointer;
+}
+/* At bottom of expandable panel */
+.closePanelBtn {
+  outline: none;
+  font-size: 1rem;
+  border: navy 1px solid;
+  border-radius: 30px;
+  color: #5971ad;
+  background: white;
+  padding: 6px;
+}
+.closePanelBtn:hover {
+  background: #5971ad;
+  color: white;
+  cursor: pointer;
+  text-decoration: none; /* NB: Must be on :hover to elim underline in [a] used to close expandable panels */
+}
+
+/* Some styling of ToC to suit accordions */
+.ulToc {
+  list-style-type: circle;
+  text-align: left;
+  margin-top: 10px;
+}
+.ulToc li:hover {
+  color: green;
+  font-weight: 800;
+  list-style-type: lower-greek;
+}
+.ulToc a:hover {
+  text-decoration: none;
+  color: green;
+  font-weight: 800;
+}
+
+.yellow-panel-div {
+  background: #ffffdd;
+  border-radius: 30px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+
+/* Over-ride idyll's default font for btn */
+.idyll-display {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style for PhZeroFourteen.js pH series */
+.bar:hover {
+  opacity: 1;
+  /* opacity: 0.85; */
+  cursor: pointer;
+}
+
+/* [div] for Section 'PREFACE' */
+.section-preface {
+  background-color: #eef7fa; /* lighter blue */
+  border: 1px solid navy;
+  border-radius: 30px;
+  color: navy;
+  margin-bottom: 25px;
+}
+.section-preface h4 {
+  margin-bottom: 3px;
+  margin-left: 20px;
+}
+.section-preface ul {
+  margin-top: 3px;
+  margin-left: 20px;
+}
+
+/* [div] for Section 'SUMMARY' */
+.section-summary {
+  background-color: #79554817; /* light "brown" */
+  /* background-color: #f9d1d358; */ /* light red */
+  border: 1px solid rgb(67, 67, 67);
+  border-radius: 30px;
+  color: rgb(97, 96, 96);
+  margin-bottom: 25px;
+  margin-top: 0px;
+}
+.section-summary div {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+.section-summary h4 {
+  text-align: center;
+  margin-top: 10px;
+}
+.section-summary ul {
+  margin-top: 3px;
+  margin-left: 20px;
+}
+
+/* HR between Sections */
+.section-hr {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-top: 2.5px dashed navy;
+  background: white;
+}
+
+/* reduced from 4em to tighten spacing after Header */
+.article-header {
+  margin-bottom: 2em;
+}
