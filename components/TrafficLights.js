@@ -9,7 +9,8 @@ const {
   // calcRho,
 } = require("./SomeFunctions");
 
-const labelsBiofloc = ["CO2 ≤ 10", "UIA-N ≤ 12.5", "Ωar ≥ 1"];
+const subTwo = "\u2082";
+const labelsBiofloc = [`CO${subTwo} ≤ 10`, "UIA-N ≤ 12.5", "Ωar ≥ 1"];
 
 const labelsAquaponics = ["CO2 ≤ 10", "UIA-N ≤ 12.5", "Iron (Fe)"];
 
