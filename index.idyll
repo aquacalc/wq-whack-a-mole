@@ -477,6 +477,10 @@ But if the material in the next section is more detailed than you want, or if yo
 move on to one of the other topics. And if you get the urge later, you always can return and take it in a bit at a time.
 [/p]
 
+[div style:`{textAlign:'right', fontSize:'1.1rem'}`]
+[a href:"https://aquacalc.github.io/ph_ch2/"]Go to Part II: A Quick-o Water Chem Primer[/a]
+[/div]
+
 [hr className:'section-hr' id:'ph-and-beyond' /]
 
 [Inline] [h4 style:`{display: 'inline', marginRight: '30px', marginBottom: '0px', paddingBottom:'0px'}` id:"refs"] [/h4] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
