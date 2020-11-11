@@ -478,7 +478,9 @@ move on to one of the other topics. And if you get the urge later, you always ca
 [/p]
 
 [div style:`{textAlign:'right', fontSize:'1.1rem'}`]
-[a href:"https://aquacalc.github.io/ph_ch2/"]Go to Part II: A Quick-o Water Chem Primer[/a]
+// [a href:"https://aquacalc.github.io/ph_ch2/"]
+Go to Part II: A Quick-o Water Chem Primer
+// [/a]
 [/div]
 
 [hr className:'section-hr' id:'ph-and-beyond' /]
