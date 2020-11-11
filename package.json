@@ -8,12 +8,15 @@
     "css": "styles.css",
     "authorView": false
   },
-  "dependencies": {
-    "idyll": "^4.0.0",
-    "idyll-d3-component": "^2.0.0",
-    "d3": "^4.0.0"
+  "homepage": "https://aquacalc.github.io/ph_ch1",
+  "scripts": {
+    "deploy": "gh-pages -d build"
   },
-  "devDependencies": {
-    "gh-pages": "^0.12.0"
-  }
+  "dependencies": {
+    "d3": "^4.0.0",
+    "gh-pages": "^3.1.0",
+    "idyll": "^4.0.0",
+    "idyll-d3-component": "^2.0.0"
+  },
+  "devDependencies": {}
 }
