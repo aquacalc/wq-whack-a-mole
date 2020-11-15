@@ -167,15 +167,15 @@ to 6.3. On the other end, pH above 9 is not uncommon in mature high-density cult
 In its role as water quality's "master variable", pH controls the rate and direction of important processes that determine the health of aquatic systems.
 [/p]
 
-[p style:`{marginBottom:'3px'}`]Among others, pH plays a critical role in determining...[/p]
+[p style:`{marginBottom:'3px'}`]Among others, pH plays a critical role in determining the...[/p]
 
 [ul style:`{marginTop:"8px"}`]
-[li]the concentration of toxic un-ionized ammonia (UIA)[/li]
-[li]the efficiency of nitrifying bacteria in removing ammonia[/li]
-[li]the amount of toxic dissolved carbon dioxide (CO[sub]2[/sub])[/li]
-[li]the calcite saturation state Ω (omega), important in skeletal formation[/li]
-[li]the effectiveness of chlorine in killing pathogens in pools & spas[/li]
-[li]the availability of minerals for good growth of hydroponic plants[/li]
+[li]...concentration of toxic un-ionized ammonia (UIA)[/li]
+[li]...efficiency of nitrifying bacteria in removing ammonia[/li]
+[li]...amount of toxic dissolved carbon dioxide (CO[sub]2[/sub])[/li]
+[li]...calcite saturation state Ω (omega), important in skeletal formation[/li]
+[li]...effectiveness of chlorine in killing pathogens in pools & spas[/li]
+[li]...availability of minerals for good growth of hydroponic plants[/li]
 [/u]
 
 
@@ -279,8 +279,8 @@ symbolized as "-log[sub]10[/sub]".
 [/p]
 
 [p]
-As you'll see a bit further along in this section of the WQ Map online manual, logarithms are a convenient way of transforming very small quantities into a more 
-human-friendly form. If you dip into the water-quality tech literature, you're sure to come across not only pH, but also pOH, pK[sub]w[/sub], pK[sub]a[/sub], 
+As you'll see a bit further along, logarithms are one way of transforming very small quantities -- and especially quantities that vary over a wide range of values -- 
+into a more human-friendly form. When you dip into the water-quality tech literature, you'll come across not only pH, but also pOH, pK[sub]w[/sub], pK[sub]a[/sub], 
 and so forth.
 [/p]
 
@@ -299,7 +299,7 @@ and so forth.
 [/div]
 
 [p]
-Only very rarely will a single pH value satisfy the criteria of all important water quality properties. For example...
+In practice, it can be challenging to find the pH range that satisfies the criteria of all important water quality properties. For example...
 [/p]
 
 [ul]
@@ -309,12 +309,12 @@ When pH is high, CO[sub]2[/sub] and Ω levels may be safe, but UIA may be a prob
 
 [li]
 But when pH is low enough for safe UIA, then CO[sub]2[/sub] may be dangerously high, Ω too low to form strong shells, and nitrifying bacteria may not have sufficient
-bicarbonate (HCO[sub]3[/sub][sup]-[/sub]) to function efficiently.
+bicarbonate ion (HCO[sub]3[/sub][sup]-[/sub]) to function efficiently.
 [/li]
 [/ul]
 
 [p]
-The following panel illustrates this aspect of pH management.
+The following interactive display illustrates this aspect of pH management.
 [/p]
 
 
@@ -351,7 +351,7 @@ Play with pH to find an optimum. How wide (or narrow) is that optimal pH range?
 [/p]
 
 [p]
-After you've found an optimum pH, change Total Ammonia-Nitrogen (**TA-N**) to see how that upsets the balance (it increases UIA-N); then search for a new optimum pH.
+After you've found an optimum pH, change Total Ammonia-Nitrogen (**TA-N**) to see how that upsets the balance (it changes UIA-N); then search for a new optimum pH range.
 [/p]
 
 [p style:`{fontSize: "0.78rem"}`]
@@ -453,7 +453,7 @@ playing "Water Quality Whack-a-Mole".
 [/div]
 
 [p]
-You don't have to dive deeper into the details of pH presented below to manage your aquatic system: You can use the **WQ Map** -- included in the 
+You don't have to dive deeper into the details of pH presented in the next sections to manage your aquatic system: You can use the **WQ Map** -- included with the 
 **WQ ToolBox** software -- to guide you to the Green Zone, the region where critical water-quality parameters are safely balanced.
 [/p]
 
