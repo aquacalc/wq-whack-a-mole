@@ -57,7 +57,7 @@ explanations and the tech literature. This will equip users to become more effec
 // [/p]
 
 [p style: `{fontSize: '0.90rem'}` ]
- *This document was developed with* [a href:"https://idyll-lang.org/"]Idyll[/a] [Cite 
+ *This document was developed with* [a href:"https://idyll-lang.org/" target:"_blank" rel:"noopener noreferrer"]Idyll[/a] [Cite 
   authors:"Matthew Conlen and Jeffrey Heer"
   title:"Idyll: A Markup Language for Authoring and Publishing Interactive Articles on the Web"
   url:"https://idl.cs.washington.edu/files/2018-Idyll-UIST.pdf" 
@@ -65,7 +65,7 @@ explanations and the tech literature. This will equip users to become more effec
   venue: "Seattle, WA"
   date:"2018"
 /], *a "toolkit for creating data-driven stories 
- and explorable explanations". Custom components were built with* [a href:"https://reactjs.org/"]React[/a] *and*  [a href:"https://d3js.org/"]D3[/a].
+ and explorable explanations". Custom components were built with* [a href:"https://reactjs.org/" target:"_blank" rel:"noopener noreferrer"]React[/a] *and*  [a href:"https://d3js.org/" target:"_blank" rel:"noopener noreferrer"]D3[/a].
 [/p]
 
 [p style:`{textAlign:'right'}`]
@@ -258,7 +258,7 @@ simply to distinguish one sample from another labeled "q".
 [/p]
 
 [p]
-A few others (*e.g.*, [a href:"https://derangedphysiology.com/main/cicm-primary-exam/required-reading/acid-base-physiology/Chapter%20106/sorensen-definition-ph-hydrogen-ion-concentration"]here[/a]) 
+A few others (*e.g.*, [a href:"https://derangedphysiology.com/main/cicm-primary-exam/required-reading/acid-base-physiology/Chapter%20106/sorensen-definition-ph-hydrogen-ion-concentration" target:"_blank" rel:"noopener noreferrer"]here[/a]) 
 have gone back to the source and point out the "money" sentence on p. 134 of Sørensen's original paper [Cite id:"sorensen" /] where he first introduces the term.
 [/p]
 
@@ -501,7 +501,7 @@ move on to one of the other topics. And if you get the urge later, you always ca
 [/p]
 
 [div style:`{textAlign:'right', fontSize:'1.1rem'}`]
-[a href:"https://aquacalc.github.io/ph_ch2/"]Go to Part II: A Quick-o Water Chem Primer[/a]
+[a href:"https://aquacalc.github.io/ph_ch2/" target:"_blank" rel:"noopener noreferrer"]Go to Part II: A Quick-o Water Chem Primer[/a]
 [/div]
 
 [hr className:'section-hr' id:'ph-and-beyond' /]
