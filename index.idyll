@@ -6,7 +6,7 @@
   fullWidth:true
   title:"WQ ToolBox Manual"
   subtitle:"pH I: The Basics"
-  authorLink:"aquacalc@gmail.com"
+  authorLink:"aquacalc@protonmail.ch"
   date:`(new Date()).toDateString()`
   background:"url('static/images/Buza-2.png')"
   color:"white"
@@ -69,7 +69,7 @@ explanations and the tech literature. This will equip users to become more effec
 [/p]
 
 [p style:`{textAlign:'right'}`]
-  contact [a href:'mailto: aquacalc@gmail.com']aquacalc@gmail.com[/a]
+  contact [a href:'mailto: aquacalc@protonmail.ch']aquacalc@protonmail.ch[/a]
 [/p]
 
 [div style:`{background: '#F5F5DC', borderRadius: '15px', padding: '15px', textAlign:'center', marginTop:'0px', paddingTop:'2px'}`]
@@ -110,7 +110,7 @@ pH is a measure of a solution's acidity.
 [/p]
 
 [p]
-The pH scale has no fixed limits: it runs from negative numbers [Cite 
+The pH scale has no fixed limits: [a href:"https://pubs.acs.org/doi/pdf/10.1021/ed083p1465" target:"_blank" rel:"noopener noreferrer"]it runs from negative numbers[/a] [Cite 
   authors:"Lim, K.F."
   title:"Negative pH Does Exist"
   id:"ph-negative"
