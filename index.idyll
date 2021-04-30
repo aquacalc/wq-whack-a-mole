@@ -37,8 +37,8 @@
 [aside]
 [Inline]
 // Whether working with aquatic production (aquaculture, aquaponics, hydroponics) or recreational (pool, spa, home aquarium) systems, 
-The **WQ ToolBox** software can be used without this manual to manage aquatic production (aquaculture, aquaponics, hydroponics) and 
-recreational (pool, spa, home aquarium) systems.
+The **WQ ToolBox** software can be used without this manual to manage aquatic systems designed for production (aquaculture, aquaponics, hydroponics) & 
+recreation (pool, spa, home aquaria).
 [/Inline]
 [/aside]
 
@@ -69,7 +69,9 @@ explanations and the tech literature. This will equip users to become more effec
 [/p]
 
 [p style:`{textAlign:'right'}`]
-  contact [a href:'mailto: aquacalc@protonmail.ch']aquacalc@protonmail.ch[/a]
+  contact [a href:'mailto: aquacalc@protonmail.ch' 
+                target:"_blank"
+                rel:"noopener noreferrer"]aquacalc@protonmail.ch[/a]
 [/p]
 
 [div style:`{background: '#F5F5DC', borderRadius: '15px', padding: '15px', textAlign:'center', marginTop:'0px', paddingTop:'2px'}`]
