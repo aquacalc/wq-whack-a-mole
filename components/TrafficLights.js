@@ -79,7 +79,7 @@ const myLights_OmegaAr = [
     r: 50,
     fill: "red",
     isOn: true,
-    value: "0.45",
+    value: "0.44",
   },
   {
     x_index: 2,
