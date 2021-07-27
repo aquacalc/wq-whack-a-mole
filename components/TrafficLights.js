@@ -32,7 +32,8 @@ const myLights_Co2 = [
     r: 50,
     fill: "yellow",
     isOn: true,
-    value: "9.9",
+    value: "8.69",
+    // value: "9.9", // [NB] Where was the error? This initial CO2 value changed to 8.69 when first move was to change TAN slider
   },
   {
     x_index: 0,
