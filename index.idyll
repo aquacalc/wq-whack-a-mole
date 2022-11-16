@@ -5,7 +5,7 @@
 [Header
   fullWidth:true
   title:"Water Quality Whack-a-Mole"
-  subtitle:"need to manage the whole system"
+  subtitle:"must manage the whole megillah"
   authorLink:"aquacalc@protonmail.ch"
   date:`(new Date()).toDateString()`
   background:"url('static/images/Buza-2.png')"
