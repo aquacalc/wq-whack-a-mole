@@ -49,11 +49,6 @@ It does that by helping aquaculturists build a strong foundation of basic water-
 and essential tech vocabulary.
 [/p]
 
-[p]
-The present example illustrates the difficulties in managing water quality when the 
-the focus is too narrowly fixed on controlling only one property &dash: Solve one problem...and another might pop up. 
-[/p]
-
 [p style: `{fontSize: '0.90rem'}` ]
  *This document was developed with* [a href:"https://idyll-lang.org/" target:"_blank" rel:"noopener noreferrer"]Idyll[/a] [Cite 
   authors:"Matthew Conlen and Jeffrey Heer"
@@ -78,22 +73,36 @@ the focus is too narrowly fixed on controlling only one property &dash: Solve on
 [/div]
 
 [p]
-In practice, it can be challenging to find the pH range that satisfies the criteria of all important water quality properties. For example...
+The present example illustrates the difficulties in managing water quality when the 
+the focus is fixed too narrowly on controlling one property.
+[/p]
+
+[p]
+Too much attention on solving one problem...
+and you may have unintentionally created another one that pops up inconveniently. 
+[/p]
+
+[p]
+Turn your attention to that new problem, and...you get the picture, eh?
+[/p]
+
+[p]
+It can be challenging to find the pH range that satisfies the criteria of all important water-quality properties.
 [/p]
 
 [ul]
 [li]
-When pH is high, CO[sub]2[/sub] and Ω levels may be safe, but UIA may be a problem and hydroponic plants may be unable to absorb essential minerals.
+When pH is high, CO[sub]2[/sub] and Ω (carbonate saturation) levels may be safe, but UIA-N may be a problem and hydroponic plants may be unable to absorb essential minerals.
 [/li]
 
 [li]
-But when pH is low enough for safe UIA, then CO[sub]2[/sub] may be dangerously high, Ω too low to form strong shells, and nitrifying bacteria may not have sufficient
+But when pH is low enough for safe UIA-N, then CO[sub]2[/sub] may be dangerously high, Ω too low to form strong shells, and nitrifying bacteria may not have sufficient
 bicarbonate ion (HCO[sub]3[/sub][sup]-[/sub]) to function efficiently.
 [/li]
 [/ul]
 
 [p]
-The following interactive display illustrates this aspect of pH management.
+Play with the following interactive display to get a "feel" this aspect of pH management.
 [/p]
 
 
@@ -186,7 +195,8 @@ playing "Water Quality Whack-a-Mole".
 [/div]
 
 [p]
-The Water Quality Map is designed to simplify identifying the region of optimal water conditions, alleviating the time and mistakes of the trial-and-error approach.
+The issue is to identify the conditions under which water quality is optimal for your species. 
+The Water Quality Map is designed to simplify this task, alleviating the time and mistakes of a trial-and-error approach.
 [/p]
 
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ //
