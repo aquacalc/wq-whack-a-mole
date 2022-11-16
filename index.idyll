@@ -40,13 +40,15 @@ This extract is pulled from the **WQ ToolBox** manual, a companion of the
 [/p]
 
 [p]
-The Manual bridges the gap between overly simple explanations 
-of water quality and the aquaculture tech literature.
+The manual aims to bridge the gap between (1) overly simple explanations of 
+water quality that don't adequately inform aquaculture management practices and (2) important results in the 
+research literature that are not readily 
+accessible without a firm tech background.
 [/p]
 
 [p]
 It does that by helping aquaculturists build a strong foundation of basic water-quality concepts 
-and essential tech vocabulary.
+and essential tech vocabulary, the better to interact more effectively with colleagues and tech specialists.
 [/p]
 
 [p style: `{fontSize: '0.90rem'}` ]
@@ -69,21 +71,33 @@ and essential tech vocabulary.
 
 // ((((((((( ONE SIZE FIT ALL )))))))))
 [div style:`{marginTop: '35px'}`]
-[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"one-size"]*One size doesn't always fit all*[/h3] [span style:`{fontSize: '0.85rem'}`][/span] [/Inline]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"one-size"]*A Balancing Act*[/h3] [span style:`{fontSize: '0.85rem'}`][/span] [/Inline]
 [/div]
 
 [p]
-The present example illustrates the difficulties in managing water quality when the 
-the focus is fixed too narrowly on controlling one property.
+The example below illustrates some of the challenges involved in managing water quality in even a very simple system.
 [/p]
 
 [p]
-Too much attention on solving one problem...
-and you may have unintentionally created another one that pops up inconveniently. 
+If too much attention is placed on solving one problem, that solution may cause a different problem to pop up. 
 [/p]
 
 [p]
-Turn your attention to that new problem, and...you get the picture, eh?
+And if you then turn your focus to solving that new problem, 
+then another problem -- a different one, or maybe the original problem -- 
+may have to be whacked down.
+[/p]
+
+[p]
+You end up playing Water Quality Whack-a-Mole. Not ideal for a crop that would grow best in a balanced culture environment.
+[/p]
+
+[div style:`{marginTop: '35px'}`]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"one-size"]*Our Example*[/h3] [span style:`{fontSize: '0.85rem'}`][/span] [/Inline]
+[/div]
+
+[p]
+Our problem centers on pH, a core water-quality property.
 [/p]
 
 [p]
@@ -92,17 +106,20 @@ It can be challenging to find the pH range that satisfies the criteria of all im
 
 [ul]
 [li]
-When pH is high, CO[sub]2[/sub] and Ω (carbonate saturation) levels may be safe, but UIA-N may be a problem and hydroponic plants may be unable to absorb essential minerals.
+When pH is high, CO[sub]2[/sub] and Ω (carbonate saturation) levels may be safe, 
+but UIA-N may be a problem and hydroponic plants may be unable to absorb 
+essential minerals.
 [/li]
 
 [li]
-But when pH is low enough for safe UIA-N, then CO[sub]2[/sub] may be dangerously high, Ω too low to form strong shells, and nitrifying bacteria may not have sufficient
-bicarbonate ion (HCO[sub]3[/sub][sup]-[/sub]) to function efficiently.
+But when pH is low enough for safe UIA-N, then CO[sub]2[/sub] may be dangerously 
+high, Ω too low to form strong carapaces and shells, and nitrifying bacteria may 
+have sub-optimal conditions to function efficiently.
 [/li]
 [/ul]
 
 [p]
-Play with the following interactive display to get a "feel" this aspect of pH management.
+Playing with the interactive display below will give you a "feel" for this aspect of pH management.
 [/p]
 
 
@@ -195,8 +212,11 @@ playing "Water Quality Whack-a-Mole".
 [/div]
 
 [p]
-The issue is to identify the conditions under which water quality is optimal for your species. 
-The Water Quality Map is designed to simplify this task, alleviating the time and mistakes of a trial-and-error approach.
+So, the goal is to identify the conditions under which water quality is optimal for your species and then adjust the culture environment accordingly. 
+[/p]
+
+[p]
+The Water Quality Map is designed to simplify that key task, alleviating the time and mistakes of a trial-and-error approach.
 [/p]
 
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ //
