@@ -1,11 +1,11 @@
-[meta title:"WQ ToolBox - pH Part 1" description:"pH section of online manual that accompanies The WQ Map and The WQ ToolBox software." /]
+[meta title:"Water Quality Whack-a-Mole" description:"Demo the need to manage the whole system, not just one part" /]
 
 // [IdyllLogo /]
 
 [Header
   fullWidth:true
-  title:"WQ ToolBox Manual"
-  subtitle:"pH I: The Basics"
+  title:"Water Quality Whack-a-Mole"
+  subtitle:"need to manage the whole system"
   authorLink:"aquacalc@protonmail.ch"
   date:`(new Date()).toDateString()`
   background:"url('static/images/Buza-2.png')"
@@ -437,80 +437,6 @@ playing "Water Quality Whack-a-Mole".
 
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ //
 
-[div className: 'section-summary']
-
-// ((((((((( SUMMARY: JUST THE BASICS )))))))))
-[div]
-[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"summary-toc-1"]Summary: Just the Basics[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
-[/div]
-
-  [ul]
-    [li] *from this section* [/li]
-      [ul style:`{marginBottom:'20px'}`]
-        [li] pH measures a **solution's acidity** [/li]
-        [li] pH is a **master variable** that determines critical WQ properties [/li]
-        [li] (there's no evidence that "p" in pH stands for anything) [/li]
-        [li] the pH scale runs from **negative numbers to more than 14** [/li]
-        [li] most practical values range from **pH 6.5 - pH 8.5** [/li]
-        [li] WQ properties have **different pH optima**: some low, some high [/li]
-        [li] the overall **optimum is difficult to find** by trial-and-error [/li]
-        [li] the **WQ ToolBox** software finds pH optima automatically [/li]
-      [/ul]
-
-    [li] *if you don't go deeper, some highlights from the next sections* [/li]
-      [ul]
-        [li] pH is defined on the **-log[sub]10[/sub] scale** [/li]
-        [li] strictly, pH is defined as **activity**, not **concentration** [/li]
-        [li] **small pH changes** mean much larger acidity changes [/li]
-        [li] a one-unit pH change means a **ten-fold change** in acidity [/li]
-        [li] **each 0.30 pH** ***drop*** **roughly doubles** acid concentration [/li]
-        [li] **each 0.30 pH** ***rise*** **roughly halves** acid concentration [/li]
-        [li] **neutral pH is not always 7**; it varies with temperature & salinity [/li]
-        [li] the **NBS scale** is for freshwater and is inaccurate in seawater [/li]
-        [li] **three pH scales** are used for seawater calculations [/li]
-        [li] the **WQ ToolBox** software performs all needed pH gymnastics [/li]
-      [/ul]
-  [/ul]
-
-[/div]
-
-[hr className:'section-hr'/]
-
-// ((((((((( DIVE DEEPER? )))))))))
-[div style:`{marginTop: '35px'}`]
-[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"diving-deeper"]*Diving deeper?*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
-[/div]
-
-[p]
-You don't have to dive deeper into the details of pH presented in the next sections to manage your aquatic system: You can use the **WQ Map** -- included with the 
-**WQ ToolBox** software -- to guide you to the Green Zone, the region where critical water-quality parameters are safely balanced.
-[/p]
-
-[p]But developing a deeper understanding of pH and other water-quality properties has advantages: It lays a foundation that will help you...
-[/p]
-
-[ul style:`{marginLeft:'30px'}` ]
-[li]...better grasp the software results[/li]
-[li]...scrape more information & insight from the technical literature[/li]
-[li]...communicate more effectively with colleagues[/li]
-[li]...ask better questions of tech specialists (and understand the answers!) [/li]
-[li]...and enhance your sense of professional confidence[/li]
-[/ul]
-
-[p]
-In short, it's part of becoming a more complete WQ manager.
-[/p]
-
-[p]
-But if the material in the next section is more detailed than you want, or if you glaze over at the sight of equations, you can blow it off and 
-move on to one of the other topics. And if you get the urge later, you always can return and take it in a bit at a time.
-[/p]
-
-[div style:`{textAlign:'right', fontSize:'1.1rem'}`]
-[a href:"https://aquacalc.github.io/ph_ch2/" target:"_blank" rel:"noopener noreferrer"]Go to Part II: A Quick-o Water Chem Primer[/a]
-[/div]
-
-[hr className:'section-hr' id:'ph-and-beyond' /]
 
 [Inline] [h4 style:`{display: 'inline', marginRight: '30px', marginBottom: '0px', paddingBottom:'0px'}` id:"refs"] [/h4] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
 
