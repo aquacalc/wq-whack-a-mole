@@ -18,22 +18,29 @@
   <body>
     <div id="idyll-mount"><div data-reactroot=""><div class="idyll-root"><div class=" idyll-text-container"></div><div class="article-header" style="background:url(&#x27;static/images/Buza-2.png&#x27;);color:white"><h1 class="hed">Water Quality Whack-a-Mole</h1><h2 class="dek">need to manage the whole system</h2><div class="idyll-pub-date">Wed Nov 16 2022</div></div><div class=" idyll-text-container"><h2 id="intro">Intro</h2><p>
 This extract is pulled from the <strong>WQ ToolBox</strong> manual, a companion of the <a href="https://www.aquatoolbox.com/#scroll-to-the-wq-map" target="_blank" rel="noopener noreferrer">Water Quality Map</a> software.</p><p>
-The Manual bridges the gap between overly simple explanations 
-of water quality and the aquaculture tech literature.</p><p>
+The manual aims to bridge the gap between (1) overly simple explanations of 
+water quality that don’t adequately inform aquaculture management practices and (2) important results in the 
+research literature that are not readily 
+accessible without a firm tech background.</p><p>
 It does that by helping aquaculturists build a strong foundation of basic water-quality concepts 
-and essential tech vocabulary.</p><p style="font-size:0.90rem" idyll="[object Object]"><em>This document was developed with</em> <a href="https://idyll-lang.org/" target="_blank" rel="noopener noreferrer">Idyll</a> <a title="Idyll: A Markup Language for Authoring and Publishing Interactive Articles on the Web, Matthew Conlen and Jeffrey Heer" href="https://idl.cs.washington.edu/files/2018-Idyll-UIST.pdf">[<!-- -->1<!-- -->]</a>, <em>a “toolkit for creating data-driven stories 
+and essential tech vocabulary, the better to interact more effectively with colleagues and tech specialists.</p><p style="font-size:0.90rem" idyll="[object Object]"><em>This document was developed with</em> <a href="https://idyll-lang.org/" target="_blank" rel="noopener noreferrer">Idyll</a> <a title="Idyll: A Markup Language for Authoring and Publishing Interactive Articles on the Web, Matthew Conlen and Jeffrey Heer" href="https://idl.cs.washington.edu/files/2018-Idyll-UIST.pdf">[<!-- -->1<!-- -->]</a>, <em>a “toolkit for creating data-driven stories 
  and explorable explanations”. Custom components were built with</em> <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React</a> <em>and</em>  <a href="https://d3js.org/" target="_blank" rel="noopener noreferrer">D3</a>.</p><p style="text-align:right" idyll="[object Object]">
-  contact <a href="mailto: aquacalc@protonmail.ch" target="_blank" rel="noopener noreferrer">aquacalc@protonmail.ch</a></p><div style="margin-top:35px" idyll="[object Object]"><div style="display:inline-block"> <h3 style="display:inline;margin-right:30px" id="one-size"><em>One size doesn’t always fit all</em></h3> <span style="font-size:0.85rem" idyll="[object Object]"></span> </div></div><p>
-The present example illustrates the difficulties in managing water quality when the 
-the focus is fixed too narrowly on controlling one property.</p><p>
-Too much attention on solving one problem...
-and you may have unintentionally created another one that pops up inconveniently. </p><p>
-Turn your attention to that new problem, and...you get the picture, eh?</p><p>
+  contact <a href="mailto: aquacalc@protonmail.ch" target="_blank" rel="noopener noreferrer">aquacalc@protonmail.ch</a></p><div style="margin-top:35px" idyll="[object Object]"><div style="display:inline-block"> <h3 style="display:inline;margin-right:30px" id="one-size"><em>A Balancing Act</em></h3> <span style="font-size:0.85rem" idyll="[object Object]"></span> </div></div><p>
+The example below illustrates some of the challenges involved in managing water quality in even a very simple system.</p><p>
+If too much attention is placed on solving one problem, that solution may cause a different problem to pop up. </p><p>
+And if you then turn your focus to solving that new problem, 
+then another problem -- a different one, or maybe the original problem -- 
+may have to be whacked down.</p><p>
+You end up playing Water Quality Whack-a-Mole. Not ideal for a crop that would grow best in a balanced culture environment.</p><div style="margin-top:35px" idyll="[object Object]"><div style="display:inline-block"> <h3 style="display:inline;margin-right:30px" id="one-size"><em>Our Example</em></h3> <span style="font-size:0.85rem" idyll="[object Object]"></span> </div></div><p>
+Our problem centers on pH, a core water-quality property.</p><p>
 It can be challenging to find the pH range that satisfies the criteria of all important water-quality properties.</p><ul><li>
-When pH is high, CO<sub>2</sub> and Ω (carbonate saturation) levels may be safe, but UIA-N may be a problem and hydroponic plants may be unable to absorb essential minerals.</li><li>
-But when pH is low enough for safe UIA-N, then CO<sub>2</sub> may be dangerously high, Ω too low to form strong shells, and nitrifying bacteria may not have sufficient
-bicarbonate ion (HCO<sub>3</sub><sup>-</sup>) to function efficiently.</li></ul><p>
-Play with the following interactive display to get a “feel” this aspect of pH management.</p><div class="dynamic-module"><div style="margin-top:0px" idyll="[object Object]"><div style="display:inline-block"> <h3 style="display:inline;margin-right:30px" id="whack-a-mole"><em>Water Quality Whack-a-Mole</em></h3> <span style="font-size:0.85rem" idyll="[object Object]"></span> </div></div><p>
+When pH is high, CO<sub>2</sub> and Ω (carbonate saturation) levels may be safe, 
+but UIA-N may be a problem and hydroponic plants may be unable to absorb 
+essential minerals.</li><li>
+But when pH is low enough for safe UIA-N, then CO<sub>2</sub> may be dangerously 
+high, Ω too low to form strong carapaces and shells, and nitrifying bacteria may 
+have sub-optimal conditions to function efficiently.</li></ul><p>
+Playing with the interactive display below will give you a “feel” for this aspect of pH management.</p><div class="dynamic-module"><div style="margin-top:0px" idyll="[object Object]"><div style="display:inline-block"> <h3 style="display:inline;margin-right:30px" id="whack-a-mole"><em>Water Quality Whack-a-Mole</em></h3> <span style="font-size:0.85rem" idyll="[object Object]"></span> </div></div><p>
 The game: adjust pH so that all water-quality properties fall within their safe range (<em>i.e.</em>, each light is either green or yellow). Your targets:</p><ul style="margin-left:40px" idyll="[object Object]"><li>Carbon dioxide (<strong>CO<sub>2</sub></strong>) should be <strong><em>less than</em></strong> <strong>1<!-- -->0 <!-- -->mg<!-- -->/L</strong></li><li>Un-Ionized Ammonia-Nitrogen (<strong>UIA-N</strong>) should be <strong><em>less than</em></strong> <strong>1<!-- -->2<!-- -->.<!-- -->5 <!-- -->μg<!-- -->/L</strong></li><li>Aragonite saturation (<strong>Ω<sub>ar</sub></strong>) should be <strong>1<!-- -->.<!-- -->0</strong> <strong><em>or higher</em></strong> </li></ul><p>
 Start with a low pH, observe the effects, and then set a high pH to see the change.</p><p>
 Play with pH to find an optimum. How wide (or narrow) is that optimal pH range?</p><p>
@@ -44,8 +51,8 @@ TA-N <input type="range" value="0.5" min="0.05" max="2.5" step="0.01"/><span cla
 (And the optimal range may be very narrow, spanning only a few tenths of a pH unit.)</p><p>
 Trial-and-error, as in this demo, is an inefficient management approach: you smack down one problem...and another problem pops up somewhere else -- kind of like 
 playing “Water Quality Whack-a-Mole”.</p><div style="text-align:center;margin-top:20px" idyll="[object Object]"></div></div><p>
-The issue is to identify the conditions under which water quality is optimal for your species. 
-The Water Quality Map is designed to simplify this task, alleviating the time and mistakes of a trial-and-error approach.</p><div style="display:inline-block"> <h4 style="display:inline;margin-right:30px;margin-bottom:0px;padding-bottom:0px" id="refs"> </h4> <span style="font-size:0.85rem" idyll="[object Object]"></span> </div><div id="references"><h1>References</h1><ol><li><a href="https://idl.cs.washington.edu/files/2018-Idyll-UIST.pdf" target="_blank">Idyll: A Markup Language for Authoring and Publishing Interactive Articles on the Web</a>, <!-- -->Matthew Conlen and Jeffrey Heer<!-- -->.<em> Seattle, WA.</em> 2018.</li></ol></div></div></div></div></div>
+So, the goal is to identify the conditions under which water quality is optimal for your species and then adjust the culture environment accordingly. </p><p>
+The Water Quality Map is designed to simplify that key task, alleviating the time and mistakes of a trial-and-error approach.</p><div style="display:inline-block"> <h4 style="display:inline;margin-right:30px;margin-bottom:0px;padding-bottom:0px" id="refs"> </h4> <span style="font-size:0.85rem" idyll="[object Object]"></span> </div><div id="references"><h1>References</h1><ol><li><a href="https://idl.cs.washington.edu/files/2018-Idyll-UIST.pdf" target="_blank">Idyll: A Markup Language for Authoring and Publishing Interactive Articles on the Web</a>, <!-- -->Matthew Conlen and Jeffrey Heer<!-- -->.<em> Seattle, WA.</em> 2018.</li></ol></div></div></div></div></div>
     <script src="static/idyll_index.js"></script>
   </body>
 </html>
